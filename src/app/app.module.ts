@@ -6,18 +6,32 @@ import { TemplateFormComponent } from './template-form/template-form.component';
 import { FormsModule } from '@angular/forms';
 import {ReactiveFormsModule} from '@angular/forms';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
+import { HttpClientModule , HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AuthInterceptor } from './auth-interceptor.service';
+  import { Components, RoutingModule } from './routing/routing.module';
+import { NocompComponent } from './nocomp/nocomp.component';
+import { DepartmentDetailComponent } from './department-detail/department-detail.component';
 @NgModule({
   declarations: [
     AppComponent,
     TemplateFormComponent,
-    ReactiveFormComponent
+    ReactiveFormComponent,
+    Components,
+    DepartmentDetailComponent
+    
+    
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule,
+    RoutingModule
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }
+  ],
+
   bootstrap: [AppComponent]
 })
 export class AppModule { }
