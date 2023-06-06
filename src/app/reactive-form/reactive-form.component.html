@@ -1,0 +1,16 @@
+<form [formGroup]="signUpForm" (ngSubmit)="Register(signUpForm)">
+
+<div> 
+    <label for="firstName"> Enter ForstName </label>
+        <input type="text" formControlName="FirstName"/>
+        <div *ngIf="signUpForm.controls['FirstName'].errors">
+   
+            <div *ngIf="signUpForm.controls['FirstName'].hasError('required')">
+             Title is required</div>
+             <div *ngIf="signUpForm.controls['FirstName'].hasError('minlength')">
+              minlength is required</div>
+          </div>
+      </div>
+
+<button type="submit"> Register </button>
+    </form>
