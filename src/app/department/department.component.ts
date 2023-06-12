@@ -14,10 +14,10 @@ export class DepartmentComponent {
     {"id":3, "name":"Angular3"}
   ]
 
-  select(department: any)
+  select(id: any)
   {
-    console.log(department)
+    console.log(id)
     this._router.navigate(["/departmentdetails/" + 
-    department.id])
+    id])
   }
 }

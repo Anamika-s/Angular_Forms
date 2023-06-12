@@ -11,13 +11,17 @@ import { AuthInterceptor } from './auth-interceptor.service';
   import { Components, RoutingModule } from './routing/routing.module';
 import { NocompComponent } from './nocomp/nocomp.component';
 import { DepartmentDetailComponent } from './department-detail/department-detail.component';
+import { OverviewComponent } from './overview/overview.component';
+import { ContactComponent } from './contact/contact.component';
 @NgModule({
   declarations: [
     AppComponent,
     TemplateFormComponent,
     ReactiveFormComponent,
     Components,
-    DepartmentDetailComponent
+    DepartmentDetailComponent,
+    OverviewComponent,
+    ContactComponent
     
     
   ],
